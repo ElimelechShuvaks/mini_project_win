@@ -1,0 +1,52 @@
+﻿<Window x:Class="PL.Products.OrderItemWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PL.Products"
+        mc:Ignorable="d"
+        Title="OrderItemWindow" Height="450" Width="800" DataContext="{Binding RelativeSource={RelativeSource self}}">
+    <Window.Background>
+
+        <ImageBrush ImageSource="\image\mainWindow\mainbakeground.jpg" Stretch="UniformToFill" ></ImageBrush>
+    </Window.Background>
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Grid.Column="0" Grid.Row="0" Text="Order Id:" Style="{StaticResource TextBlock Style}"  HorizontalAlignment="Right"/>
+        <TextBlock  Grid.Column="0"  Grid.Row="1" Text="Product Id:" Style="{StaticResource TextBlock Style}"  HorizontalAlignment="Right"/>
+        <TextBlock  Grid.Column="0"  Grid.Row="2" Text="Name:" Style="{StaticResource TextBlock Style}"  HorizontalAlignment="Right"/>
+        <TextBlock  Grid.Column="0"  Grid.Row="3" Text="Price:" Style="{StaticResource TextBlock Style}"  HorizontalAlignment="Right"/>
+        <TextBlock  Grid.Column="0"  Grid.Row="4" Text="Amount:" Style="{StaticResource TextBlock Style}"  HorizontalAlignment="Right"/>
+        <TextBlock  Grid.Column="0"  Grid.Row="5" Text="Total Price:" Style="{StaticResource TextBlock Style}"  HorizontalAlignment="Right"/>
+
+        <TextBox  Grid.Column="1"  Grid.Row="0" IsEnabled="False" Text="{Binding Item.OrderId}" Style="{StaticResource StyleTextBox}"  HorizontalAlignment="Left"/>
+        <TextBox  Grid.Column="1" Grid.Row="1" IsEnabled="False" Text="{Binding Item.ProductId}" Style="{StaticResource StyleTextBox}"  HorizontalAlignment="Left"/>
+        <TextBox  Grid.Column="1" Grid.Row="2" IsEnabled="False" Text="{Binding Item.Name}" Style="{StaticResource StyleTextBox}"  HorizontalAlignment="Left"/>
+        <TextBox  Grid.Column="1" Grid.Row="3" IsEnabled="False" Text="{Binding Item.Price}" Style="{StaticResource StyleTextBox}"  HorizontalAlignment="Left"/>
+        <TextBox  Grid.Column="1" Grid.Row="4"  IsEnabled="False" Text="{Binding Item.Amount}" Style="{StaticResource StyleTextBox}"  HorizontalAlignment="Left"/>
+        <TextBox  Grid.Column="1"  Grid.Row="5" IsEnabled="False" Text="{Binding Item.TotalPrice}" Style="{StaticResource StyleTextBox}"  HorizontalAlignment="Left"/>
+
+        <Button Grid.Column="1" HorizontalAlignment="Left"  Grid.Row="6" Width="100" Height="35" Click="OrderItemWindowButton_Click" Content="Update" Style="{StaticResource styleButton}"/>
+        <StackPanel Grid.Row="6" Grid.Column="1" Orientation="Horizontal" Height="28" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Content="-" Click="cmdDown_Click" Width="20" Height="30" Style="{StaticResource styleButton}" />
+            <TextBox HorizontalAlignment="Center" VerticalAlignment="Center" Text="{Binding NewAmount}" Width="35" Style="{StaticResource StyleTextBox}"/>
+            <Button Content="+"  Width="20" Height="30" Click="cmdUp_Click" Style="{StaticResource styleButton}" />
+        </StackPanel>
+    </Grid>
+</Window>

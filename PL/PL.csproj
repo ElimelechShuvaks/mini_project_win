@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>net6.0-windows</TargetFramework>
+		<Nullable>enable</Nullable>
+		<UseWPF>true</UseWPF>
+		<BaseOutputPath>$(SolutionDir)\bin\</BaseOutputPath>
+		<OutputPath>$(SolutionDir)\bin\</OutputPath>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+		<UseCommonOutputDirectory>true</UseCommonOutputDirectory>
+
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="Products windows\ProductWindow.xaml.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="image\mainWindow\mainbakeground.jpg" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Page Remove="Products windows\ProductWindow.xaml" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\BL\BL.csproj" />
+	  <ProjectReference Include="..\Simulator\Simulator.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Resource Include="image\mainWindow\mainbakeground.jpg">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </Resource>
+	</ItemGroup>
+
+</Project>
